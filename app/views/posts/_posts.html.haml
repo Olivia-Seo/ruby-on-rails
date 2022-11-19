@@ -1,0 +1,16 @@
+.card
+  .card-header
+    .fa.fa-book
+    = link_to post.title, post_path(post)
+  .card-body
+    = post.content
+  .card-footer
+    .far.fa-clock
+    = post.created_at.strftime('%d-%b-%Y')
+    .row
+    .fa.fa-chalkboard-teacher
+    = post.user
+  .card-footer
+    = link_to 'Show', post, class: 'btn btn-sm btn-primary'
+    = link_to 'Edit', edit_post_path(post), class: 'btn btn-sm btn-warning'
+    = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger'

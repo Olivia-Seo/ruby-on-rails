@@ -1,0 +1,73 @@
+<div class="jumbotron">
+  <div class="display-4">
+    What do you want to learn today?
+  </div>
+  <div class="p-4"></div>
+</div>
+<div class="card-group">
+  <div class="card card-body">
+    <h1>
+      <div class="fa fa-graduation-cap"></div>
+    </h1>
+    <%= Post.count %>
+    online courses
+    <div class="row"></div>
+    Explore a variety of fresh topics
+  </div>
+  <div class="card card-body">
+    <h1>
+      <div class="fa fa-chalkboard-teacher"></div>
+      <!--.fa.fa-brain
+      -->
+    </h1>
+    <%= Post.distinct.count(:user_id) %>
+    expert instructors
+    <div class="row"></div>
+    Find the right instructor for you
+  </div>
+  <div class="card card-body">
+    <h1>
+      <div class="fa fa-user-graduate"></div>
+    </h1>
+    <%= User.count %>
+    active learners
+    <div class="row"></div>
+    Join the knowledge sharing community
+  </div>
+  <div class="card card-body">
+    <h1>
+      <div class="fa fa-infinity"></div>
+    </h1>
+    Lifetime access
+    <div class="row"></div>
+    Learn on your schedule
+  </div>
+</div>
+<hr/>
+<h2>
+  Popular courses
+</h2>
+<div class="card-columns">
+  <% @posts.each do |post| %>
+    <%= render 'posts/posts', post: post %>
+  <% end %>
+</div>
+<hr/>
+<h2>
+  Top rated courses
+</h2>
+<div class="card-columns">
+  <% @posts.each do |post| %>
+    <%= render 'posts/posts', post: post %>
+  <% end %>
+</div>
+<hr/>
+<h2>
+  Latest courses
+</h2>
+<div class="card-columns">
+  <% @posts.each do |post| %>
+    <%= render 'posts/posts', post: post %>
+  <% end %>
+</div>
+<hr/>

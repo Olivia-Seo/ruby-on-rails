@@ -1,0 +1,7 @@
+= link_to 'Posts', posts_path
+\/
+= link_to @post.title, post_path(@post)
+
+%p
+= render 'posts/posts', post: @post
+

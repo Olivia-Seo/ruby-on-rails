@@ -1,0 +1,57 @@
+
+.jumbotron
+  .display-4
+    What do you want to learn today?
+
+  .p-4
+
+
+.card-group
+  .card.card-body
+    %h1
+      .fa.fa-graduation-cap
+    = Post.count
+    online courses
+    .row
+    Explore a variety of fresh topics
+  .card.card-body
+    %h1
+      .fa.fa-chalkboard-teacher
+      /.fa.fa-brain
+    = Post.distinct.count(:user_id)
+    expert instructors
+    .row
+    Find the right instructor for you
+  .card.card-body
+    %h1
+      .fa.fa-user-graduate
+    = User.count
+    active learners
+    .row
+    Join the knowledge sharing community
+  .card.card-body
+    %h1
+      .fa.fa-infinity
+    Lifetime access
+    .row
+    Learn on your schedule
+
+%hr
+%h2
+  Popular Posts
+.card
+  - @posts.each do |post|
+    = render 'posts/posts', post: post
+
+%hr
+%h2
+  Top rated Posts
+.card-columns
+  - @posts.each do |post|
+    = render 'posts/posts', post: post
+
+%hr
+
+%br
+  = link_to 'New Post', new_post_path
+  = link_to 'Home', static_pages_landing_page_path
