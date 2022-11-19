@@ -10,6 +10,8 @@
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^5.2.2",
+    "heroku": "^7.66.4",
+    "heroku-cli-util": "^8.0.12",
     "jquery": "^3.6.1",
     "mdb-ui-kit": "^5.0.0",
     "popper.js": "^1.16.1",
